@@ -1,0 +1,336 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* navbar */
+nav {
+    background: #0a2540;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* MENU */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00bcd4;
+}
+
+/* underline effect */
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #00bcd4;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* hamburger */
+.nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* hero */
+.hero {
+    background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)),
+                url('../images/engineering.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.small-hero {
+    padding: 70px 20px;
+}
+
+/* HOME HERO (solar project) */
+.home-hero {
+    position: relative;
+    background: url('../images/solarproject.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 37, 64, 0.7);
+}
+
+.home-hero .hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 700px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #00bcd4;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0097a7;
+    transform: translateY(-3px);
+}
+
+/* intro */
+.intro,
+.about-section {
+    text-align: center;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.intro h2,
+.about-section h2 {
+    color: #0a2540;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: #0a2540;
+    margin-bottom: 10px;
+}
+
+/* projects */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card h3 {
+    color: #0a2540;
+}
+
+.year {
+    color: #00bcd4;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* gallery */
+.gallery-wrapper {
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-scroll {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+}
+
+.gallery-scroll img {
+    height: 180px;
+    width: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.gallery-scroll img:hover {
+    transform: scale(1.05);
+}
+
+/* contact */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 20px;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* cta */
+.cta {
+    text-align: center;
+    background: #0a2540;
+    color: white;
+    padding: 50px 20px;
+}
+
+/* footer */
+footer {
+    background: #0a2540;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0a2540;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .services,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
